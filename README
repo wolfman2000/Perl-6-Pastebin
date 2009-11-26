@@ -1,0 +1,4 @@
+This Catalyst app is meant to host Perl 6 programs
+and give them syntax highlighting if it works.
+
+Run script/p6paste_server.pl to test the application.
