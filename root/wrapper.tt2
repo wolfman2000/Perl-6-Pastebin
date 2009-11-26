@@ -1,0 +1,48 @@
+[% DEFAULT title = "Perl 6 Pastebin" -%]
+[% DEFAULT css = 'main' -%]
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>[% title %]</title>
+        <link type="text/css" rel="stylesheet" href="[% c.uri_for('/static/css/' _ css _ '.css') %]" />
+        [% IF gd_brow == 0 -%]
+        <script type="text/javascript" src="[% c.uri_for('/static/js/IE8.js') %]"></script>
+	<script type="text/javascript" src="[% c.uri_for('/static/js/ie_html5.js') %]"></script>
+        [% END -%]
+        [%- IF scripts -%]
+        [%- FOREACH item IN scripts -%]
+        <script type="text/javascript" src="[% c.uri_for('/static/js/' _ item _ '.js') %]"></script>
+        [%- END -%]
+        [%- END -%]
+    </head>
+    <body>
+        <div id="wrapper"> [%# Wrap everything in a wrapper. %]
+            <div id="header">
+                <h1>[% title %]</h1>
+            </div>
+            <div id="content">
+                [%# Put the actual content in this section. -%]
+                [% content %]
+            </div>
+            <div id="menu">
+                [%# Links go here. -%]
+                <ul>
+                    <li><a href="[% c.uri_for('/') %]">Home</a></li>
+                    <li><a href="[% c.uri_for('/works') %]">Projects</a></li>
+                    <li><a href="[% c.uri_for('/about') %]">About Me</a></li>
+                    <li><a href="[% c.uri_for('/resume') %]">Resumé</a></li>
+                    <li><a href="[% c.uri_for('/misc') %]">Misc</a></li>
+                    <li><a href="[% c.uri_for('/contact') %]">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="footer">
+            <p>This webpage is © Jason Felds 2009.</p>
+            <p>
+                <a href="http://validator.w3.org/check/referer"><img
+                    src="[% c.uri_for('/static/images/valid-xhtml10.png') -%]"
+                    alt="Valid XHTML 1.0!" id="valid_xhtml" /></a>
+            </p>
+        </div>
+    </body>
+</html>
