@@ -8,3 +8,4 @@ lex/
 META.yml
 inc/
 pm_to_blib
+cover_db/
