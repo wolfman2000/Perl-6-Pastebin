@@ -37,8 +37,9 @@ our $VERSION = '0.01';
 
 __PACKAGE__->config(
 	name => 'P6Paste',
-	'Plugin::Session' => { cookie_expires => 2592000, }
+	'Plugin::Session' => { cookie_expires => 2592000, },
 );
+__PACKAGE__->config->{static}->{ignore_extensions} = [];
 
 # Start the application
 __PACKAGE__->setup();
