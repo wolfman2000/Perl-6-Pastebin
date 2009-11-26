@@ -3,7 +3,7 @@ package P6Paste::Model::DBIC;
 use strict;
 use base 'Catalyst::Model::DBIC::Schema';
 
-my $dsn = $ENV{MYAPP_DSN} ||= 'dbi:SQLite:p6paste.db';
+my $dsn = $ENV{MYAPP_DSN} // 'dbi:SQLite:p6paste.db';
 __PACKAGE__->config(
     schema_class => 'P6Paste::Schema',
     
