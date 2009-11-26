@@ -1,0 +1,224 @@
+* /* Start with universal selector - fixer. */
+{
+	margin: 0;
+	padding: 0;
+}
+
+header, footer, nav, section, article
+{
+	display: block;
+}
+
+html
+{
+	font-family: "DejaVu Sans", Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	background-color: #4863A0;
+}
+
+pre
+{
+	font-family: "DejaVu Sans Mono", "Courier New", Courier, monospace;
+}
+
+textarea
+{
+	width: 95%;
+	height: 15em;
+}
+
+.smaller
+{
+	font-size: smaller;
+}
+.required
+{
+	font-style: italic;
+}
+
+h1 > a
+{
+	color: black;
+}
+
+h2
+{
+	font-weight: bold;
+	margin-bottom: 1.5em;
+}
+
+p
+{
+	margin-top: 0.75em;
+	margin-bottom: 0.75em;
+	line-height: 1.3em;
+}
+
+body
+{
+	background-color: #AAAAAA;
+	border: 1px solid gray;
+	color: #333333;
+	line-height: 130%;
+	margin: 1em;
+}
+
+a:link
+{
+	color: #000088;
+}
+
+ul > li
+{
+	margin-left: 2em;
+}
+
+header
+{
+	background-color: #DDDDDD;
+	border-bottom: 1px solid gray;
+	padding: 0.5em;
+}
+header > h1
+{
+	text-align: center;
+	display: block;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+article
+{
+	background-color: #BBBBBB;
+	margin-left: 15em;
+	min-height: 50em;
+	padding: 2em;
+}
+
+article > h2
+{
+	text-align: right;
+	display: block;
+	margin-bottom: 2em;
+}
+
+nav
+{
+	left: 1em;
+	top: 3.5em;
+	position: absolute;
+	padding: 1em;
+	width: 13em;
+}
+
+nav > p
+{
+	text-align: center;
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	width: 100%;
+}
+
+nav > ul
+{
+	border: 1px solid black;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+	list-style-type: none;
+	background-color: #77AADD;
+	font-size: smaller;
+}
+nav > ul > li
+{
+	color: white;
+	font-weight: normal;
+	width: 100%;
+	margin-right: 2em;
+	margin-left: 0em;
+	border-top: 1px solid black;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+nav > ul > li:first-child
+{
+	border-top: none;
+}
+
+nav > ul > li > a
+{
+	text-decoration: none;
+}
+nav > ul > li > a:hover
+{
+	background-color: orange;
+	text-decoration: underline;
+}
+footer
+{
+	background-color: #DDDDDD;
+	border-top: 1px solid gray;
+	clear: both;
+	color: #333333;
+	margin: 0;
+	padding: 0.5em;
+	text-align: right;
+}
+
+/* Common form information below */
+
+form > fieldset > *
+{
+	margin-left: 2em;
+}
+
+form > fieldset > legend
+{
+	display: inline-block;
+	padding-top: 0.2em;
+}
+
+form > fieldset > dl
+{
+	margin-top: 1.5em;
+}
+
+form > fieldset > dl > dt
+{
+	width: 10em;
+	float: left;
+	font-weight: bold;
+}
+
+form > fieldset > dl > dd
+{
+	margin-bottom: 0.8em;
+}
+
+/* The common code for the funny messages to stand out. */
+
+section#funny > p:first-child
+{
+	font-size: x-large;
+	margin-bottom: 1em;
+}
+
+/* Should one fail to register, load this stuff. */
+
+
+/* Display a paste with perl 6 syntax highlighting. */
+
+section#pasteview
+{
+	background-color: white;
+	border: 1px solid black;
+	padding: 1em;
+	line-height: 0.75em;
+}
+section#pasteview pre
+{
+	line-height: 1em;
+}
+
