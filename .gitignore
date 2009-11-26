@@ -1,8 +1,10 @@
 # List the files you don't want in.
 Makefile
+Makefile.old
 CORE.pad.store
 blib/
 root/static/fonts/
 lex/
 META.yml
 inc/
+pm_to_blib
