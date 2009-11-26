@@ -1,0 +1,4 @@
+<h3>ERROR!</h3>
+<p>I'm sorry, but you aren't supposed to get to this page from
+how you came here. I suggest <a href="[% c.uri_for('/') %]">heading home</a>.
+</p>

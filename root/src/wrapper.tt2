@@ -1,0 +1,65 @@
+[% DEFAULT title = "Perl 6 Pastebin" -%]
+[% DEFAULT css = 'main' -%]
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <title>[% title %]</title>
+        [% IF is_ie -%]
+        <script type="text/javascript" src="[% c.uri_for('/static/js/IE8.js') %]"></script>
+	<script type="text/javascript" src="[% c.uri_for('/static/js/ie_html5.js') %]"></script>
+        [% END -%]
+        [%- IF scripts -%]
+        [%- FOREACH item IN scripts -%]
+        <script type="text/javascript" src="[% c.uri_for('/static/js/' _ item _ '.js') %]"></script>
+        [%- END -%]
+        [%- END -%]
+        <link type="text/css" rel="stylesheet" href="[% c.uri_for('/static/css/' _ css _ '.css') %]" />
+	[% IF pastview -%]
+	<link type="text/css" rel="stylesheet" href="[% c.uri_for('/static/css/p6_style.css') %]" />
+	[% END -%]
+    </head>
+    <body>
+        <header><h1><a href="[% c.uri_for('/') %]">Perl 6 Pastebin</a></h1></header>
+        <article>
+	[% IF uname -%]
+	<h2>Welcome [% uname %].</h2>
+	[% ELSE -%]
+	<h2>Welcome Guest. Care to <a href="[% c.uri_for('/register') -%]">register</a>
+        or <a href="[% c.uri_for('/login') -%]">login</a>?</h2>
+	[% END -%]
+	[%# Put the actual content in this section. -%]
+        [% content %]
+        </article>
+	<nav> [%# Recent pastes in here. %]
+        [% IF recentP %]
+        <p>Recent pastes:</p>
+        <ul>
+	[% WHILE (pas = recentP.next()) %]
+        <li><a href="[% c.uri_for_action('/pview/index', pas.id) %]">
+        [%- IF pas.subject -%]
+        [%- IF pas.subject.length > 20 -%]
+        [%- pas.subject | truncate(20, '…') -%]
+        [%- ELSE -%]
+        [%- pas.subject -%]
+        [%- END  # IF Subject is IDed. -%]
+        [%- ELSE -%]
+        [%- "No Subject" -%]
+        [%- END -%]</a>
+        <br />[% pas.users.uname %]
+        <br />[% pas.tcheck %]
+        </li>
+        [% END %]
+        </ul>
+        [% ELSE %]
+        <p>No pastes right now.</p>
+        <p>Contribute to the right!</p>
+        [% END %]
+        </nav>
+        <footer>
+            <p>This webpage is © Jason Felds 2009.</p>
+            <p>[%- IF c.is_ie -%]You suck![%- ELSE -%]You rule![%- END -%]</p>
+            [%- IF users -%]<p>There are [% users %] users.</p>[%- END -%]
+        </footer>
+    </body>
+</html>

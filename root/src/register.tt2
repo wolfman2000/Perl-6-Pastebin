@@ -1,0 +1,22 @@
+<p>If you want to keep a certain nickname for yourself, you
+are encouraged to register it. Once registered, it can't
+be taken away from you.</p>
+
+<p>As a safety precaution, please use at least 6 characters for your
+password. The more numbers and letters and symbols mixed in, the better.</p>
+
+<form method="post" action="[% c.uri_for('validate') %]" id="regForm">
+<fieldset><legend>Fill in all of the information.</legend>
+<dl>
+<dt><label for="regUser">Username</label></dt>
+<dd><input name="regUser" id="regUser" size="20" maxlength="32" type="text" /></dd>
+<dt><label for="regPass1">Password</label></dt>
+<dd><input name="regPass1" id="regPass1" size="20" maxlength="32" type="password" /></dd>
+<dt><label for="regPass2">Password again</label></dt>
+<dd><input name="regPass2" id="regPass2" size="20" maxlength="32" type="password" /></dd>
+<dt><label for="regEmail">Email</label></dt>
+<dd><input name="regEmail" id="regEmail" size="20" maxlength="320" type="text" /></dd>
+</dl>
+<p><button name="submit" id="submit" type="submit" value="submit">Submit</button></p>
+</fieldset>
+</form>

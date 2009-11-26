@@ -1,0 +1,20 @@
+<section id="funny">
+[%- IF funny -%]
+<p>[%- funny -%]</p>
+[%- END -%]
+[%- IF errors -%]
+<h2>Error!</h2>
+<p>You were unable to paste. Here is what happened that prevented pasting:</p>
+<ul>
+[%- FOREACH Err = errors -%]
+<li>
+[%- GET Err -%]
+</li>
+[%- END -%]
+</ul>
+<p>Please hit the back button on your browser and try again.</p>
+[%- ELSE -%]
+<h2>Success</h2>
+<p>Your paste is now available <a href="[% c.uri_for_action('/pview/index', pk) %]">here</a>!</p>
+[%- END -%]
+</div>

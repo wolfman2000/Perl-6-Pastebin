@@ -1,0 +1,9 @@
+[% IF expired %]
+<h2>Error!</h2>
+<p>This paste is no longer available. If you were the owner of this paste, please repost.</p>
+[% ELSE %]
+<section id="pasteview">
+<h2>[% subject %]</h2>
+[% pastview %]
+</section>
+[% END %]

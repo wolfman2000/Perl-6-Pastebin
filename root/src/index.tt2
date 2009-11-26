@@ -1,0 +1,49 @@
+<p>Welcome to the Perl 6 Pastebin. Simply paste your code below,
+and the code is available to the public and IRC support rooms.</p>
+[% IF uname -%]
+<p>Your name will be associated with this post.</p>
+[% ELSE -%]
+<p>You can post anonymously, or give yourself a nickname. However,
+it is recommended to register so that you can keep a name permanently.</p>
+[% END -%]
+
+<form id="pasteForm" method="post" action="[% c.uri_for('/paste/submit') %]">
+<fieldset>
+<legend>Only the paste content is required.</legend>
+<dl>
+<dt class="required"><label for="pCont">Content</label></dt>
+<dd><textarea name="pCont" id="pCont"></textarea></dd>
+<dt><label for="pNick">Nickname</label></dt>
+<dd><input name="pNick" id="pNick" type="text" size="20" maxlength="32" [% IF uname %]readonly="readonly" value="[% uname %]"[% END %] /></dd>
+<dt><label for="pPass">Password</label></dt>
+<dd><input name="pPass" id="pPass" type="password" size="20" maxlength="32" /></dd>
+<dt><label for="pSubj">Subject</label></dt>
+<dd><input name="pSubj" id="pSubj" type="text" size="20" maxlength="256" /></dd>
+<dt><label for="pTags">Tags</label></dt>
+<dd><input name="pTags" id="pTags" type="text" size="20" maxlength="128" /></dd>
+<dt><label for="pDead">Expiration*</label></dt>
+<dd>
+<select id="pDead" name="pDead">
+<option value="30">30 minutes</option>
+<option value="60">1 hour</option>
+<option value="120">2 hours</option>
+<option value="240" selected="selected">4 hours</option>
+<option value="480">8 hours</option>
+<option value="720">12 hours</option>
+<option value="1440">1 day</option>
+<option value="2880">2 days</option>
+<option value="10080">1 week</option>
+<option value="20160">2 weeks</option>
+<option value="40320">1 month</option>
+<option value="80640">2 months</option>
+<option value="241920">half a year</option>
+<option value="483840">1 year</option>
+<option value="48384000">Beyond my life</option>
+</select>
+</dd>
+</dl>
+<p><button name="submit" id="submit" value="submit" type="submit">Submit</button></p>
+</fieldset>
+</form>
+
+<p class="smaller">*: Date calculations assume a month is exactly 4 weeks, and a year is exactly 12 months.</p>

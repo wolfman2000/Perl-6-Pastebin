@@ -1,0 +1,21 @@
+<section id="funny">
+[%- IF funny.message -%]
+<p>[%- funny.message -%]</p>
+[%- END -%]
+[%- IF regError AND regError.length -%]
+<h2>Error!</h2>
+<p>You were unable to register. Here is what happened that prevented registration:</p>
+<ul>
+[%- FOREACH Err = regError -%]
+<li>
+[%- GET Err -%]
+</li>
+[%- END -%]
+</ul>
+<p>Please hit the back button on your browser and try again.</p>
+[%- ELSE -%]
+<h2>Success</h2>
+<p>You've successfully registered your nickname. Now no one can take it.</p>
+<p><a href="[% c.uri_for('/') %]">Get to pasting!</a></p>
+[%- END -%]
+</section>
