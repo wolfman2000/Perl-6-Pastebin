@@ -2,3 +2,4 @@
 Makefile
 CORE.pad.store
 blib/
+root/static/fonts/
