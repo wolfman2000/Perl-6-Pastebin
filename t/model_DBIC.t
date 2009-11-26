@@ -33,7 +33,7 @@ $pa->create(
  'tcheck' => '2009-11-11 02:58:16', 'ip' => '193.200.132.135', }
 );
 
-my %sql = ( 'users.uname' => 'Anonymous' ); 
+%sql = ( 'users.uname' => 'Anonymous' ); 
 my %attr = (
     join => 'users',
     columns => ['me.ip'],
