@@ -1,0 +1,4 @@
+# List the files you don't want in.
+Makefile
+CORE.pad.store
+blib/
