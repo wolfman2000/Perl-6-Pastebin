@@ -60,6 +60,8 @@ sub auto :Private {
 
 =head2 index
 
+The traditional index page.
+
 =cut
 
 sub index :Path :Args(0) {
@@ -68,6 +70,12 @@ sub index :Path :Args(0) {
     # Hello World
     $c->stash->{template} = 'index.tt2';
 }
+
+=head2 default
+
+The page called upon if nothing is found.
+
+=cut
 
 sub default :Path {
     my ( $self, $c ) = @_;

@@ -22,15 +22,19 @@ Catalyst Controller.
 
 =head2 index
 
+Shortcut to paste submission.
+
 =cut
 
 sub index :Path :Args(0) {
-    my ( $self, $c ) = @_;
-
-    $c->stash->{name} = "Jason";
-
-    $c->response->body('Matched P6Paste::Controller::Paste in Paste.');
+    return shift->submit(shift);
 }
+
+=head2 submit
+
+Upload paste submissions.
+
+=cut
 
 sub submit :Local :Args(0) {
     my ( $self, $c ) = @_;
