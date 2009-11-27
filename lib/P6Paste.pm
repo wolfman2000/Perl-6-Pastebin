@@ -1,5 +1,6 @@
 package P6Paste;
 
+use utf8;
 use strict;
 use warnings;
 
@@ -16,14 +17,15 @@ use HTTP::BrowserDetect;
 
 use parent qw/Catalyst/;
 use Catalyst qw/-Debug
-                ConfigLoader
-                Unicode
-                Static::Simple
-		StackTrace
-		Authentication
-		Session
-		Session::Store::FastMmap
-		Session::State::Cookie/;
+  ConfigLoader
+  Unicode
+  Static::Simple
+  StackTrace
+  Authentication
+  Session
+  Session::Store::FastMmap
+  Session::State::Cookie/;
+use constant EXPIRES => 2_592_000;
 our $VERSION = '0.01';
 
 # Configure the application.
@@ -36,14 +38,19 @@ our $VERSION = '0.01';
 # local deployment.
 
 __PACKAGE__->config(
-	name => 'P6Paste',
-	'Plugin::Session' => { cookie_expires => 2592000, },
+    name              => 'P6Paste',
+    'Plugin::Session' => { cookie_expires => EXPIRES },
 );
 __PACKAGE__->config->{static}->{ignore_extensions} = [];
 
 # Start the application
 __PACKAGE__->setup();
 
+1;
+
+__END__
+
+=encoding utf8
 
 =head1 NAME
 
@@ -72,4 +79,3 @@ it under the same terms as Perl itself.
 
 =cut
 
-1;
