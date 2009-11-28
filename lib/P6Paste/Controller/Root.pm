@@ -79,7 +79,20 @@ The page called upon if nothing is found.
 
 sub default :Path {
     my ( $self, $c ) = @_;
-    $c->response->body( 'Page not found' );
+    
+    my $arg = $c->request->arguments->[0];
+    if (defined $arg and $arg eq "pview")
+    {
+        my $tmp = $c->model('DBIC::Messages');
+        my %attr = ('select' => ['message'], 'order_by' => 'RANDOM() LIMIT 1');
+        my %srch = ('me.cat_id' => 6);
+        $c->stash->{funny} = $tmp->search(\%srch, \%attr )->first->message;
+        $c->stash->{template} = "pview_err.tt2";
+    }
+    else
+    {
+        $c->response->body( 'Page not found' );
+    }
     $c->response->status(404);
 }
 
