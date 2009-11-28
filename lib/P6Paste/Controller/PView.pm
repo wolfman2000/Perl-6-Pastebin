@@ -27,8 +27,12 @@ Catalyst Controller.
 sub index :Path('/pview') :Args(1) { # Expecting the paste ID.
     my ( $self, $c, $pid ) = @_;
     
-    unless defined $pid and $pid == int $pid
+    unless (defined $pid and $pid == int $pid) # Must be an integer.
     {
+        my $tmp = $c->model('DBIC::Messages');
+        my %attr = ('select' => ['message'], 'order_by' => 'RANDOM() LIMIT 1');
+        my %srch = ('me.cat_id' => 6);
+        $c->stash->{funny} = $tmp->search(\%srch, \%attr )->first;
         $c->stash->{template} = "pview_err.tt2";
         return;
     }
