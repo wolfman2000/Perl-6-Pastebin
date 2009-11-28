@@ -39,3 +39,37 @@ __PACKAGE__->many_to_many('pastes' => 'paste_tags', 'pastes');
 
 # You can replace this text with custom content, and it will be preserved on regeneration
 1;
+
+=head1 DESCRIPTION
+
+The tags table contains the list of all of the tags that
+were created for the pastes. These tags are to be used
+for searching in the future.
+
+=head1 COLUMNS
+
+=head2 id
+
+This is the traditional primary id column.
+
+=head2 tag
+
+This is the name of the tag. 32 characters
+are allowed. This field is required.
+
+=head1 SEE ALSO
+
+=head2 L<Catalyst> - The Catalyst framework
+
+=head2 L<DBIx::Class> - The DBIC framework
+
+=head1 AUTHOR
+
+Jason Felds
+
+=head1 LICENSE
+
+This library is free software. You can redistribute it and/or modify
+it under the same terms as Perl itself.
+    
+=cut

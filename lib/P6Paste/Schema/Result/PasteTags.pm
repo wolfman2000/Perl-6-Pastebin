@@ -46,3 +46,39 @@ __PACKAGE__->belongs_to('tags' => 'P6Paste::Schema::Result::Tags',
 
 # You can replace this text with custom content, and it will be preserved on regeneration
 1;
+
+=head1 DESCRIPTION
+
+The paste_tags table links the pastes created by the users
+with the tags assigned by the users.
+
+=head1 COLUMNS
+
+=head2 id
+
+This is the traditional primary id column.
+
+=head2 paste_id
+
+This is the ID of the paste.
+
+=head2 tag_id
+
+This is the ID of the tag.
+
+=head1 SEE ALSO
+
+=head2 L<Catalyst> - The Catalyst framework
+
+=head2 L<DBIx::Class> - The DBIC framework
+
+=head1 AUTHOR
+
+Jason Felds
+
+=head1 LICENSE
+
+This library is free software. You can redistribute it and/or modify
+it under the same terms as Perl itself.
+    
+=cut
