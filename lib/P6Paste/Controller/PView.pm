@@ -24,7 +24,8 @@ Catalyst Controller.
 
 =cut
 
-sub index :Path('/pview') :Args(1) { # Expecting the paste ID.
+#sub index :Path('/pview') :Args(1) { # Expecting the paste ID.
+sub index :Chained('/') :PathPart('pview') :Args(1) {
     my ( $self, $c, $pid ) = @_;
     
     unless (defined $pid and $pid == int $pid) # Must be an integer.
