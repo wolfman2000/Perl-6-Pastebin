@@ -17,4 +17,4 @@
 <h2>Success</h2>
 <p>Your paste is now available <a href="[% c.uri_for_action('/pview/index', pk) %]">here</a>!</p>
 [%- END -%]
-</div>
+</section>
