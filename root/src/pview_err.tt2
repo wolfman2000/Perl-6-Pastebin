@@ -1,0 +1,9 @@
+<section id="funny">
+[%- IF funny -%]
+<p>[%- funny -%]</p>
+[%- END -%]
+<h2>Error!</h2>
+<p>You were unable to view the selected paste. It is most likely
+either expired or nonexistant.</p>
+<p>Please hit the back button on your browser and try again.</p>
+</section>
