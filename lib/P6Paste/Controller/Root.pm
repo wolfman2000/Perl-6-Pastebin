@@ -37,20 +37,15 @@ sub auto :Private {
     # Get whether the browser is IE or not.
     $c->stash->{is_ie} //= HTTP::BrowserDetect->new->ie;
 
-    # Get the name of the person.
- 
+    # Get the name of the person. 
     $c->stash->{uname} = undef unless defined $c->session->{id};
     $c->stash->{uname} = $c->model('DBIC::Users')->find($c->session->{id}, {'select' => ['uname']});
 
     # Retrieve the 10 recent pastes for the sidebar.
-
-
     my %sql = (expires => [undef, {'>', => \q<datetime('now')> }] );
-    #my $sql = q{expires IS NULL OR datetime(tcheck, '+' || expires || ' minutes') > datetime('now')};
     my %attr = (
         prefetch => 'users',
-        order_by => 'tcheck DESC',
-#       join => { 'paste_id' => 'user_id' },
+        order_by => 'tcheck DESC LIMIT 10',
     );
     
     my $tmp = $c->model('DBIC::Pastes')->search(\%sql, \%attr);
