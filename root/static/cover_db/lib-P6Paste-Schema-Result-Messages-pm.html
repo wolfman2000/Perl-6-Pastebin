@@ -26,9 +26,9 @@ http://www.pjcj.net
 <table>
 <tr><th>line</th><th>stmt</th><th>bran</th><th>cond</th><th>sub</th><th>pod</th><th>time</th><th>code</th></tr>
 <tr><td class="h">1</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">package P6Paste::Schema::Result::Messages;</td></tr>
-<tr><td class="h">2</td><td colspan="7"></td></tr><tr><td class="h">3</td><td><div class="c3">8</div><div class="c3">8</div><div class="c3">8</div></td><td></td><td></td><td><div class="c3"><a href="lib-P6Paste-Schema-Result-Messages-pm--subroutine.html#L3">8</a></div></td><td></td><td><div>40</div><div>13</div><div>31</div></td><td class="s">use strict;</td></tr>
-<tr><td class="h">4</td><td><div class="c3">8</div><div class="c3">8</div><div class="c3">8</div></td><td></td><td></td><td><div class="c3"><a href="lib-P6Paste-Schema-Result-Messages-pm--subroutine.html#L4">8</a></div></td><td></td><td><div>39</div><div>10</div><div>28</div></td><td class="s">use warnings;</td></tr>
-<tr><td class="h">5</td><td colspan="7"></td></tr><tr><td class="h">6</td><td><div class="c3">8</div><div class="c3">8</div><div class="c3">8</div></td><td></td><td></td><td><div class="c3"><a href="lib-P6Paste-Schema-Result-Messages-pm--subroutine.html#L6">8</a></div></td><td></td><td><div>39</div><div>13</div><div>26</div></td><td class="s">use base &#39;DBIx::Class&#39;;</td></tr>
+<tr><td class="h">2</td><td colspan="7"></td></tr><tr><td class="h">3</td><td><div class="c3">8</div><div class="c3">8</div><div class="c3">8</div></td><td></td><td></td><td><div class="c3"><a href="lib-P6Paste-Schema-Result-Messages-pm--subroutine.html#L3">8</a></div></td><td></td><td><div>41</div><div>12</div><div>30</div></td><td class="s">use strict;</td></tr>
+<tr><td class="h">4</td><td><div class="c3">8</div><div class="c3">8</div><div class="c3">8</div></td><td></td><td></td><td><div class="c3"><a href="lib-P6Paste-Schema-Result-Messages-pm--subroutine.html#L4">8</a></div></td><td></td><td><div>40</div><div>13</div><div>29</div></td><td class="s">use warnings;</td></tr>
+<tr><td class="h">5</td><td colspan="7"></td></tr><tr><td class="h">6</td><td><div class="c3">8</div><div class="c3">8</div><div class="c3">8</div></td><td></td><td></td><td><div class="c3"><a href="lib-P6Paste-Schema-Result-Messages-pm--subroutine.html#L6">8</a></div></td><td></td><td><div>41</div><div>11</div><div>30</div></td><td class="s">use base &#39;DBIx::Class&#39;;</td></tr>
 <tr><td class="h">7</td><td colspan="7"></td></tr><tr><td class="h">8</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">__PACKAGE__-&gt;load_components(&quot;InflateColumn::DateTime&quot;, &quot;Core&quot;);</td></tr>
 <tr><td class="h">9</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">__PACKAGE__-&gt;table(&quot;messages&quot;);</td></tr>
 <tr><td class="h">10</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">__PACKAGE__-&gt;add_columns(</td></tr>
@@ -62,6 +62,43 @@ http://www.pjcj.net
 <tr><td class="h">41</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s"># DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:VSH/q97ciYaJkD5AFKYI/Q</td></tr>
 <tr><td class="h">42</td><td colspan="7"></td></tr><tr><td class="h">43</td><td colspan="7"></td></tr><tr><td class="h">44</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s"># You can replace this text with custom content, and it will be preserved on regeneration</td></tr>
 <tr><td class="h">45</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">1;</td></tr>
+<tr><td class="h">46</td><td colspan="7"></td></tr><tr><td class="h">47 - 83</td><td colspan="6"></td><td class="s"><pre>=head1 DESCRIPTION
+
+The messages table contains all of the messages within
+the application. These messages are generally called upon
+by the application whenever something informative and/or fun
+wants to be said.
+
+=head1 COLUMNS
+
+=head2 id
+
+This is the traditional primary id column.
+
+=head2 cat_id
+
+This is the ID of the message category.
+
+=head2 message
+
+This is the message itself to be displayed.
+
+=head1 SEE ALSO
+
+=head2 L&lt;Catalyst&gt; - The Catalyst framework
+
+=head2 L&lt;DBIx::Class&gt; - The DBIC framework
+
+=head1 AUTHOR
+
+Jason Felds
+
+=head1 LICENSE
+
+This library is free software. You can redistribute it and/or modify
+it under the same terms as Perl itself.
+    
+=cut</pre></td></tr>
 </table>
 </body>
 </html>
