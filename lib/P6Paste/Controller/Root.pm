@@ -86,7 +86,7 @@ sub default :Path {
         my $tmp = $c->model('DBIC::Messages');
         my %attr = ('select' => ['message'], 'order_by' => 'RANDOM() LIMIT 1');
         my %srch = ('me.cat_id' => 6);
-        $c->stash->{funny} = $tmp->search(\%srch, \%attr )->first->message;
+        $c->stash->{funny} = $tmp->search(\%srch, \%attr )->first;
         $c->stash->{template} = "pview_err.tt2";
     }
     else
