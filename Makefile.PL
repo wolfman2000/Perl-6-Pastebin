@@ -18,6 +18,8 @@ requires 'Catalyst::Plugin::Session::State::Cookie';
 requires 'Catalyst::Action::RenderView';
 requires 'parent';
 requires 'Syntax::Highlight::Perl6';
+requires 'DateTime';
+requires 'Digest::SHA';
 requires 'HTTP::BrowserDetect';
 requires 'Config::General'; # This should reflect the config file format you've chosen
                  # See Catalyst::Plugin::ConfigLoader for supported formats
