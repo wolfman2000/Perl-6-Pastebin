@@ -27,6 +27,12 @@ Catalyst Controller.
 sub index :Path('/pview') :Args(1) { # Expecting the paste ID.
     my ( $self, $c, $pid ) = @_;
     
+    unless defined $pid and $pid == int $pid
+    {
+        $c->stash->{template} = "pview_err.tt2";
+        return;
+    }
+    
     # Get the paste subject, contents, date, expiration, username, userid, and reg check
 
     my %sql = ('me.id' => $pid, expires => [undef, {'>', => \q<datetime('now')> }] );
