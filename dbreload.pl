@@ -51,3 +51,13 @@ $schema->resultset("MessCategories")->populate([
 	},
 ]);
 
+$schema->resultset("Users")->populate([
+	{
+		uname => 'Anonymous', email => 'jafelds@feather.perl6.nl', created => '2009-11-01 00:00:00',
+		pword => 'ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAB',
+	},
+	{
+		uname => 'Orphaned', email => 'jafelds@ncsu.edu', created => '2009-11-01 00:00:00',
+		pword => 'ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAB',
+	},
+]);
