@@ -26,19 +26,23 @@ SKIP:
     );
     push @rows, 
         {
-        user_id => 1, content => 'use v6; say "Hello World!";',
+        user_id => 1, content => 'use v6; say "Hello World!";', subject => undef,
         tcheck => DateTime->new( year => 2009, month => 11, day => 1 ), ip => '1.2.3.4',
         };
 
-    
-    $schema->resultset('Pastes')->populate(\@rows);
+    my $rs = $schema->resultset('Pastes');
+    foreach (@rows)
+    {
+        $rs->add_paste($_->{user_id}, $_->{subject}, $_->{content}, undef, $_->{ip});
+    }
+    #$rs->populate(\@rows);
     
     my $mech = Test::WWW::Mechanize::Catalyst->new(catalyst_app => 'P6Paste');
     
     $mech->get_ok("/", "Get the entry page."); # Try to get the index page.
     is($mech->ct, "text/html", "Ensure the right content type is sent.");
     
-    my $pastes = $schema->resultset('Pastes')->get_recent_pastes;
+    my $pastes = $rs->get_recent_pastes;
     
     my $counter = 1;
     while (my $row = $pastes->next)
