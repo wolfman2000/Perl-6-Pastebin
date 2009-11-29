@@ -4,7 +4,6 @@ use utf8;
 use strict;
 use warnings;
 use parent 'Catalyst::Controller';
-use DateTime;
 
 =head1 NAME
 
