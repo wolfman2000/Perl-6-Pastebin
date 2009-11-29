@@ -24,7 +24,6 @@ Catalyst Controller.
 
 =cut
 
-#sub index :Path('/pview') :Args(1) { # Expecting the paste ID.
 sub index :Chained('/') :PathPart('pview') :Args(1) {
     my ( $self, $c, $pid ) = @_;
     
