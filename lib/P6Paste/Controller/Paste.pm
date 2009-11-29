@@ -102,6 +102,7 @@ sub submit :Local :Args(0) {
     if (scalar @errors)
     {
         $c->stash->{errors} = \@errors;
+        $c->response->status(409);
     }
     else
     {

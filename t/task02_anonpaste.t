@@ -1,7 +1,7 @@
 #!perl
 use strict;
 use warnings;
-use Test::More tests => 9;
+use Test::More tests => 10;
 use FindBin;
 use DateTime;
 use lib "$FindBin::Bin/../lib";
@@ -9,11 +9,11 @@ use lib "$FindBin::Bin/../lib";
 
 SKIP:
 {
-    skip 'Please set $ENV{MYAPP_DSN} to run this test.', 8 unless defined($ENV{MYAPP_DSN});
+    skip 'Please set $ENV{MYAPP_DSN} to run this test.', 9 unless defined($ENV{MYAPP_DSN});
     BEGIN {use_ok 'P6Paste::Schema'};
     eval { require Test::WWW::Mechanize::Catalyst };
 
-    skip 'Install Test::WWW::Mechanize::Catalyst for this test.', 8 if $@;
+    skip 'Install Test::WWW::Mechanize::Catalyst for this test.', 9 if $@;
     
     my $schema = P6Paste::Schema->connect($ENV{MYAPP_DSN});
     
@@ -38,7 +38,7 @@ SKIP:
     
     # Now put in a name for this user.
     
-        $mech->submit_form_ok(
+    $mech->submit_form_ok(
         {
             fields =>
             {
@@ -52,7 +52,19 @@ SKIP:
     );
     $mech->follow_link_ok({text => "here"}, "Go to your recent paste.");
     $mech->follow_link_ok({text => "Perl 6 Pastebin"}, "Go to the entry page.");
+    
+    # Try to submit without anything: should fail.
 
+    is($mech->submit_form(
+        fields =>
+        {
+            pNick => 'NonRegisteredTester',
+        },
+        form_id => 'pasteForm',
+        button => 'submit'
+    )->code, 409, "Submitting a page with no content should fail.");
+
+    
 };
 
 done_testing;
