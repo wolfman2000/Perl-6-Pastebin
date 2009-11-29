@@ -1,7 +1,7 @@
 #!perl
 use strict;
 use warnings;
-use Test::More tests => 6;
+use Test::More tests => 9;
 use FindBin;
 use DateTime;
 use lib "$FindBin::Bin/../lib";
@@ -9,11 +9,11 @@ use lib "$FindBin::Bin/../lib";
 
 SKIP:
 {
-    skip 'Please set $ENV{MYAPP_DSN} to run this test.', 5 unless defined($ENV{MYAPP_DSN});
+    skip 'Please set $ENV{MYAPP_DSN} to run this test.', 8 unless defined($ENV{MYAPP_DSN});
     BEGIN {use_ok 'P6Paste::Schema'};
     eval { require Test::WWW::Mechanize::Catalyst };
 
-    skip 'Install Test::WWW::Mechanize::Catalyst for this test.', 5 if $@;
+    skip 'Install Test::WWW::Mechanize::Catalyst for this test.', 8 if $@;
     
     my $schema = P6Paste::Schema->connect($ENV{MYAPP_DSN});
     
@@ -37,6 +37,22 @@ SKIP:
     $mech->follow_link_ok({text => "Perl 6 Pastebin"}, "Go to the entry page.");
     
     # Now put in a name for this user.
+    
+        $mech->submit_form_ok(
+        {
+            fields =>
+            {
+                pCont => 'use v6;' . chr(13) . chr(10) . 'say (1..6).pick;',
+                pNick => 'NonRegisteredTester',
+            },
+            form_id => 'pasteForm',
+            button => 'submit',
+        },
+        "Have a non registered user submit a paste."
+    );
+    $mech->follow_link_ok({text => "here"}, "Go to your recent paste.");
+    $mech->follow_link_ok({text => "Perl 6 Pastebin"}, "Go to the entry page.");
+
 };
 
 done_testing;
