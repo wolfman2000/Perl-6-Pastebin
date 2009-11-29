@@ -58,9 +58,9 @@ sub index :Chained('/') :PathPart('pview') :Args(1) {
 
         my $txt = $row->content;
         $txt =~ s/\\\"/\"/g;
+        no warnings;
         eval
         {
-        no warnings;
         my $DEBUG = 0; # Placeholder
         my $perl = Syntax::Highlight::Perl6->new( text => $txt );
         my $out = $perl->simple_html;
