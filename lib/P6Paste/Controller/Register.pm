@@ -64,7 +64,7 @@ sub validate :Local :Args(0) {
     {
         push @errors, "You must provide a valid email address.";
     }
-    elsif ($c->model('DBIC::Users')->is_email_taken($email}))
+    elsif ($c->model('DBIC::Users')->is_email_taken($email))
     {
         push @errors, "The requested email address is not available.";
     }
