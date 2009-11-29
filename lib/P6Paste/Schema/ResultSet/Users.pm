@@ -63,3 +63,58 @@ sub add_unregistered # Return the ID: that will almost always be used.
 }
 
 1;
+
+__END__
+
+=head1 DESCRIPTION
+
+This ResultSet expands upon the default Users ResultSet.
+
+=head1 METHODS
+
+=head2 is_name_taken
+
+Returns a true value if the name supplied is taken by a registered user.
+
+=head2 is_email_taken
+
+Returns a true value if the email supplied is taken by a registered user.
+
+=head2 get_name
+
+Retrieves the name of the person based upon the user ID, if supplied.
+Returns undef if the user ID was not supplied properly.
+
+=head2 get_id_row
+
+Retrieves the row containing the ID of the person.
+It requires the username and optionally the password to check if
+the nick is registered.
+
+=head2 add_registered
+
+Adds a new registered user with a username, password, and email.
+
+=head2 add_unregistered
+
+Adds a new unregistered user with a username. Returns the ID
+created by it so it can immediately be used for linking to a paste.
+
+=head1 SEE ALSO
+
+=head2 L<Catalyst> - The Catalyst framework
+  
+=head2 L<DBIx::Class> - The DBIC framework
+
+=head2 L<P6Paste::Schema::Result::Users> - The Users Table
+
+=head1 AUTHOR
+
+Jason Felds
+
+=head1 LICENSE
+
+This library is free software. You can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut

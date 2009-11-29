@@ -36,7 +36,7 @@ sub add_paste() # Return the new paste ID.
 
 sub get_valid_paste()
 {
-    my ($self, $pid) = @_; # Force array context.
+    my ($self, $pid) = @_;
     my %srch = ('me.id' => $pid, expires => [undef, {'>', => \q<datetime('now')> }]);
     my %attr = (join => 'users',
         select => [qw<me.subject me.content me.tcheck users.uname me.user_id users.pword>], );
@@ -52,3 +52,45 @@ sub get_recent_pastes()
 }
 
 1;
+
+__END__
+
+=head1 DESCRIPTION
+
+This ResultSet contains added functionality to the default Pastes ResultSet.
+
+=head1 METHODS
+
+=head2 add_paste
+
+Adds a paste to the database. Returns the ID of the new paste.
+
+=head2 get_valid_paste
+
+Retrieves the paste content based on the ID. If the ID does not
+exist or the paste is past its expiration date, it returns nothing.
+
+=head2 get_recent_pastes
+
+Retrieves the recently made pastes that are available for
+public viewing. Right now 10 is hardcoded as a limit, but this number
+may change in the future.
+
+=head1 SEE ALSO
+
+=head2 L<Catalyst> - The Catalyst framework
+  
+=head2 L<DBIx::Class> - The DBIC framework
+
+=head2 L<P6Paste::Schema::Result::Pastes> - The Pastes Table
+
+=head1 AUTHOR
+
+Jason Felds
+
+=head1 LICENSE
+
+This library is free software. You can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut
