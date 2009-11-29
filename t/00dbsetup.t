@@ -10,7 +10,7 @@ SKIP:
     skip 'Please set $ENV{MYAPP_DSN} to run this test.', 32 unless defined($ENV{MYAPP_DSN});
     BEGIN {use_ok 'P6Paste::Schema'};
 
-my $schema = P6Paste::Schema->connect("dbi:SQLite:dbname=$ENV{MYAPP_DSN}");
+my $schema = P6Paste::Schema->connect($ENV{MYAPP_DSN});
 
 $schema->deploy();
 
