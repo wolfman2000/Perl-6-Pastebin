@@ -55,8 +55,6 @@ sub submit :Local :Args(0) {
 
     my @errors = ();
 
-    my $tmp = $c->model('DBIC::Messages');
-    my %attr = ('select' => ['message'], 'order_by' => 'RANDOM() LIMIT 1');
     my $mesN; # Message category number.
 
     unless (defined $cont and length $cont)
@@ -110,8 +108,7 @@ sub submit :Local :Args(0) {
         }
     }
 
-    my %srch = ('me.cat_id' => $mesN);
-    $c->stash->{funny} = $tmp->search(\%srch , \%attr )->first->message;
+    $c->stash->{funny} = $c->model('DBIC::Messages')->get_rand_message($mesN);
 
     if (scalar @errors)
     {

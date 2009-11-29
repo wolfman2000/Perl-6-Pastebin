@@ -1,6 +1,6 @@
 <section id="funny">
-[%- IF funny.message -%]
-<p>[%- funny.message -%]</p>
+[%- IF funny -%]
+<p>[%- funny -%]</p>
 [%- END -%]
 [%- IF regError AND regError.length -%]
 <h2>Error!</h2>

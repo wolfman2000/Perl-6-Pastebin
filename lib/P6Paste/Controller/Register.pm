@@ -88,10 +88,7 @@ sub validate :Local :Args(0) {
     
     $c->stash->{regError} = \@errors;
 
-    my $tmp = $c->model('DBIC::Messages');
-    my %attr = ('select' => ['message'], 'order_by' => 'RANDOM() LIMIT 1');
     my $errs = scalar @errors;
-    my %srch = ('me.cat_id' => $errs ? 1 : 2);
     
     unless ($errs)
     {
@@ -109,7 +106,7 @@ sub validate :Local :Args(0) {
             created => join(" ", split(/T/, DateTime->now)),
         });
     }
-    $c->stash->{funny} = $tmp->search(\%srch , \%attr )->first;
+    $c->stash->{funny} = $c->model('DBIC::Messages')->get_rand_message($errs ? 1 : 2);
     $c->stash->{template} = 'validate.tt2';
 }
 
