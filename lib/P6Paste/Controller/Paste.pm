@@ -57,19 +57,19 @@ sub submit :Local :Args(0) {
 
     my $mesN; # Message category number.
 
-    unless (defined $cont and length $cont)
+    unless (length $cont)
     {
         push @errors, "You have to provide some perl code!";
     }
     my $id;
     # Check username. If blank, assume anonymous.
-    unless (defined $user and length $user) # No username provided
+    unless (length $user) # No username provided
     {
         $user = "Anonymous";
         $id = 1;
         $mesN = 4;
     }
-    elsif (defined $pass and length $pass) # If username and password provided
+    elsif (length $pass) # If username and password provided
     {
         my $val = $c->model('DBIC::Users')->get_id_row($user, $pass);
         if ($val->count) # If a match:
