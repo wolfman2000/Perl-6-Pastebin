@@ -21,6 +21,7 @@ requires 'Syntax::Highlight::Perl6';
 requires 'DateTime';
 requires 'Digest::SHA';
 requires 'HTTP::BrowserDetect';
+requires 'HTML::TreeBuilder';
 requires 'Config::General'; # This should reflect the config file format you've chosen
                  # See Catalyst::Plugin::ConfigLoader for supported formats
 catalyst;
