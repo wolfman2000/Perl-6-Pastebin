@@ -45,9 +45,7 @@ SKIP:
     {
         my $subj = $row->subject // "No Subject";
         $mech->follow_link_ok({text => $subj}, "Visit paste number " . $row->id);
-        diag($mech->uri);
         $mech->follow_link_ok({text => "Perl 6 Pastebin"}, "Return to the start after visiting paste $counter.");
-        diag($mech->uri);
         $counter++;
     }
 };
