@@ -42,14 +42,7 @@ sub auto :Private {
     $c->stash->{uname} = $c->model('DBIC::Users')->find($c->session->{id}, {'select' => ['uname']});
 
     # Retrieve the 10 recent pastes for the sidebar.
-    my %sql = (expires => [undef, {'>', => \q<datetime('now')> }] );
-    my %attr = (
-        prefetch => 'users',
-        order_by => 'tcheck DESC LIMIT 10',
-    );
-    
-    my $tmp = $c->model('DBIC::Pastes')->search(\%sql, \%attr);
-    $c->stash->{recentP} = $tmp;
+    $c->stash->{recentP} = $c->model('DBIC::Pastes')->get_recent_pastes;
 
 }
 

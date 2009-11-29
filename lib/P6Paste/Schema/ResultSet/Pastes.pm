@@ -13,4 +13,12 @@ sub get_valid_paste()
     return $self->search(\%srch, \%attr)->first;
 }
 
+sub get_recent_pastes()
+{
+    my $self = shift;
+    my $srch = {expires => [undef, {'>', => \q<datetime('now')> }] };
+    my $attr = { prefetch => 'users', order_by => 'tcheck DESC LIMIT 10' };
+    return $self->search($srch, $attr);
+}
+
 1;
