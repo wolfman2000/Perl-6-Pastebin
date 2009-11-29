@@ -16,7 +16,7 @@ sub is_email_taken # Returns an integer
 {
     my ($self, $email) = @_;
     return $self->search({'email' => $email})->count();
-]
+}
 
 sub get_name
 {
