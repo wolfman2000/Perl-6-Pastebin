@@ -35,7 +35,7 @@ SKIP:
         button => 'submit'
     )->code, 409, "Registering with no anything should fail.");
     
-    $mech->get_ok($mech->back, "PRAY the back button works.");
+    $mech->follow_link_ok({text => "register"}, "Go to the registration page.");    
     
     is($mech->submit_form(
         fields =>
@@ -47,8 +47,8 @@ SKIP:
         button => 'submit'
     )->code, 409, "The password can't be too short.");
 
-    $mech->get_ok($mech->back, "More Back button!");
-
+    $mech->follow_link_ok({text => "register"}, "Go to the registration page.");
+    
     is($mech->submit_form(
         fields =>
         {
@@ -60,7 +60,7 @@ SKIP:
         button => 'submit'
     )->code, 409, "The email must be properly formed.");
 
-    $mech->get_ok($mech->back, "More Back button!");
+    $mech->follow_link_ok({text => "register"}, "Go to the registration page.");
 
     
 };
