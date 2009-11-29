@@ -27,10 +27,11 @@ Catalyst Controller.
 sub index :Chained('/') :PathPart('pview') :Args(1) {
     my ( $self, $c, $pid ) = @_;
     
-    unless ($pid == int $pid) # PID must be defined already.
+    unless ($pid =~ /^[+-]?\d+$/) # PID must be defined already.
     {
         $c->stash->{funny} = $c->model('DBIC::Messages')->get_rand_message(6);
         $c->stash->{template} = "pview_err.tt2";
+        $c->response->status(403);
         return;
     }
     
@@ -40,6 +41,7 @@ sub index :Chained('/') :PathPart('pview') :Args(1) {
     unless (defined $row)
     {
         $c->stash->{expired} = 1;
+        $c->response->status(404);
     }
     else
     {
