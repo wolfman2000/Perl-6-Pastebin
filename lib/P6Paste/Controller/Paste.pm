@@ -105,7 +105,6 @@ sub submit :Local :Args(0) {
     }
     else
     {
-#        use Data::Dumper; print Dumper $cont;
         my $now = DateTime->now;
         my $done;
         unless (defined $dead and length $dead)
