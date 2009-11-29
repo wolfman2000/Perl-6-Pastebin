@@ -29,6 +29,7 @@ sub validate :Local :Args(0) {
     unless (defined $c->request->params->{submit})
     {
         $c->stash->{template} = 'val_get.tt2';
+        $c->response->status(405); # Must be POST
 	return;
     }
     
