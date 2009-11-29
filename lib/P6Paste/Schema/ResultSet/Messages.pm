@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use parent 'DBIx::Class::ResultSet';
 
-sub get_rand_message
+sub get_rand_message()
 {
     my ($self, $cat) = @_; # Force array context.
     my %srch = ('me.cat_id' => $cat);
