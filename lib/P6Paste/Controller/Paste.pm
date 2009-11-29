@@ -93,13 +93,7 @@ sub submit :Local :Args(0) {
         }
         else # New person entirely: add as unregistered.
         {
-            my $now = DateTime->now();
-            my %ins = (
-                uname => $user,
-                created => join(" ", split(/T/, $now)),
-            );
-            my $nu = $c->model('DBIC::Users')->create(\%ins);
-            $id = $nu->id; # If I'm lucky, the ID was generated on insert.
+            $id = $c->model('DBIC::Users')->add_unregistered($user);            
         }
     }
 
