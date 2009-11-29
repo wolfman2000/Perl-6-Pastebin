@@ -3,8 +3,6 @@ package P6Paste::Controller::Register;
 use utf8;
 use strict;
 use warnings;
-use DateTime;
-use Digest::SHA qw(sha256_hex);
 use parent 'Catalyst::Controller';
 
 =head1 NAME
@@ -92,19 +90,7 @@ sub validate :Local :Args(0) {
     
     unless ($errs)
     {
-        # If taking over an unregistered name, change ownership.
-        if ($c->model('DBIC::Users')->search({'uname' => $uname, 'pword' => undef})->count())
-        {
-            #$c->model('DBIC::Pastes')->update({'user_id' => 2})->where({'uname' => $uname});
-            $c->model('DBIC::Pastes')->search({'uname' => $uname}, { join => 'users' })->update({ 'users' => 2});
-        }
-        # Create a new record.
-        $c->model('DBIC::Users')->create({
-            uname => $uname,
-            pword => sha256_hex($pass1 . "p6"),
-            email => $email,
-            created => join(" ", split(/T/, DateTime->now)),
-        });
+        $c->model('DBIC::Users')->add_registered($uname, $pass1, $email);
     }
     $c->stash->{funny} = $c->model('DBIC::Messages')->get_rand_message($errs ? 1 : 2);
     $c->stash->{template} = 'validate.tt2';

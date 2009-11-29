@@ -34,6 +34,24 @@ sub get_id_row # Relies on username and "optional" password.
     return $self->search($srch, $attr);
 }
 
+sub add_registered # Just return a true value.
+{
+    my ($self, $name, $pass, $email) = @_;
+    if (not $self->is_name_taken($name))
+    {
+        # Force other posts to orphaned: have a clean slate.
+        $self->update({user_id => 2})->where({uname => $name});
+    }
+    my $ins = {
+        uname => $name,
+        pword => sha256_hex($pass1 . "p6"),
+        email => $email,
+        created => join(" ", split(/T/, DateTime->now)),
+    };
+    $self->create($ins);
+    return 1;
+}
+
 sub add_unregistered # Return the ID: that will almost always be used.
 {
     my ($self, $user) = @_;
