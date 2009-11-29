@@ -35,26 +35,15 @@ sub index :Chained('/') :PathPart('pview') :Args(1) {
         return;
     }
     
-    # Get the paste subject, contents, date, expiration, username, userid, and reg check
-
-    my %sql = ('me.id' => $pid, expires => [undef, {'>', => \q<datetime('now')> }] );
-#    my $sql = "me.id = $pid AND ";
-#    $sql .= q{(expires IS NULL OR datetime(tcheck, '+' || expires || ' minutes') > datetime('now'))};
+    # Get the paste data.
+    my $row = $c->model('DBIC::Pastes')->get_valid_paste($pid);
     
-    my %attr = (
-        join => 'users',
-        select => [ qw<me.subject me.content me.tcheck users.uname me.user_id users.pword> ]
-    );
-    
-    my $row = $c->model('DBIC::Pastes')->search(\%sql, \%attr );
-    
-    unless (defined $row->first)
+    unless (defined $row)
     {
         $c->stash->{expired} = 1;
     }
     else
     {
-        $row = $row->first;
 
         my $txt = $row->content;
         $txt =~ s/\\\"/\"/g;
