@@ -42,7 +42,7 @@ sub validate :Local :Args(0) {
     
     # Validate username.
         
-    unless (defined $uname and length $uname)
+    unless (length $uname)
     {
         push @errors, "You must provide a username to register.";
     }
@@ -57,7 +57,7 @@ sub validate :Local :Args(0) {
     
     # Validate email.
     
-    unless (defined $email and length $email)
+    unless (length $email)
     {
         push @errors, "You must provide an email address.";
     }
@@ -72,7 +72,7 @@ sub validate :Local :Args(0) {
     
     # Validate passwords.
     
-    unless (defined $pass1 and length $pass1)
+    unless (length $pass1)
     {
         push @errors, "You must provide a password to protect your account.";
     }
