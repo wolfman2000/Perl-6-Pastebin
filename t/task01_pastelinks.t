@@ -71,9 +71,8 @@ SKIP:
     while (my $row = $pastes->next)
     {
         my $subj = $row->subject // "No Subject";
-        diag($row->id . "\n");
         $mech->follow_link_ok({text => $subj}, "Visit paste number $row->id");
-        $mech->get_ok($mech->back, "Return back to the start after visiting paste $counter.");
+        $mech->follow_link_ok({text => "Perl 6 Pastebin"}, "Return to the start after visiting paste $counter.");
         $counter++;
     }
 };
