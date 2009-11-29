@@ -28,12 +28,9 @@ Catalyst Controller.
 sub index :Chained('/') :PathPart('pview') :Args(1) {
     my ( $self, $c, $pid ) = @_;
     
-    unless (defined $pid and $pid == int $pid) # Must be an integer.
+    unless ($pid == int $pid) # PID must be defined already.
     {
-        my $tmp = $c->model('DBIC::Messages');
-        my %attr = ('select' => ['message'], 'order_by' => 'RANDOM() LIMIT 1');
-        my %srch = ('me.cat_id' => 6);
-        $c->stash->{funny} = $tmp->search(\%srch, \%attr )->first;
+        $c->stash->{funny} = $c->model('DBIC::Messages')->get_rand_message(6);
         $c->stash->{template} = "pview_err.tt2";
         return;
     }
