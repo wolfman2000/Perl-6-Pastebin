@@ -44,7 +44,7 @@ sub add_registered # Just return a true value.
     }
     my $ins = {
         uname => $name,
-        pword => sha256_hex($pass1 . "p6"),
+        pword => sha256_hex($pass . "p6"),
         email => $email,
         created => join(" ", split(/T/, DateTime->now)),
     };
