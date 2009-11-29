@@ -26,7 +26,8 @@ Shortcut to paste submission.
 =cut
 
 sub index :Path :Args(0) {
-    return shift->submit(shift);
+    my ($self, $c) = @_;
+    return $self->submit($c);
 }
 
 =head2 submit
