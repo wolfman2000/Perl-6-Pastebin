@@ -18,42 +18,11 @@ SKIP:
     my $schema = P6Paste::Schema->connect($ENV{MYAPP_DSN}); # Easy way to add pastes.
     
     $schema->resultset('Pastes')->populate([ # Someone map the first 9 or something.
+        map
         {
-            user_id => 1, subject => "Paste 1", content => 'use v6; say "Hello World!";',
+            user_id => 1, subject => "Paste $_", content => 'use v6; say "Hello World!";',
             tcheck => DateTime->new( year => 2009, month => 11, day => 1 ), ip => '1.2.3.4',
-        },
-        {
-            user_id => 1, subject => "Paste 2", content => 'use v6; say "Hello World!";',
-            tcheck => DateTime->new( year => 2009, month => 11, day => 1 ), ip => '1.2.3.4',
-        },
-        {
-            user_id => 1, subject => "Paste 3", content => 'use v6; say "Hello World!";',
-            tcheck => DateTime->new( year => 2009, month => 11, day => 1 ), ip => '1.2.3.4',
-        },
-        {
-            user_id => 1, subject => "Paste 4", content => 'use v6; say "Hello World!";',
-            tcheck => DateTime->new( year => 2009, month => 11, day => 1 ), ip => '1.2.3.4',
-        },
-        {
-            user_id => 1, subject => "Paste 5", content => 'use v6; say "Hello World!";',
-            tcheck => DateTime->new( year => 2009, month => 11, day => 1 ), ip => '1.2.3.4',
-        },
-        {
-            user_id => 1, subject => "Paste 6", content => 'use v6; say "Hello World!";',
-            tcheck => DateTime->new( year => 2009, month => 11, day => 1 ), ip => '1.2.3.4',
-        },
-        {
-            user_id => 1, subject => "Paste 7", content => 'use v6; say "Hello World!";',
-            tcheck => DateTime->new( year => 2009, month => 11, day => 1 ), ip => '1.2.3.4',
-        },
-        {
-            user_id => 1, subject => "Paste 8", content => 'use v6; say "Hello World!";',
-            tcheck => DateTime->new( year => 2009, month => 11, day => 1 ), ip => '1.2.3.4',
-        },
-        {
-            user_id => 1, subject => "Paste 9", content => 'use v6; say "Hello World!";',
-            tcheck => DateTime->new( year => 2009, month => 11, day => 1 ), ip => '1.2.3.4',
-        },
+        }, 1 .. 9,
         {
             user_id => 1, content => 'use v6; say "Hello World!";',
             tcheck => DateTime->new( year => 2009, month => 11, day => 1 ), ip => '1.2.3.4',
@@ -71,8 +40,10 @@ SKIP:
     while (my $row = $pastes->next)
     {
         my $subj = $row->subject // "No Subject";
-        $mech->follow_link_ok({text => $subj}, "Visit paste number $row->id");
+        $mech->follow_link_ok({text => $subj}, "Visit paste number " . $row->id);
+        diag($mech->uri);
         $mech->follow_link_ok({text => "Perl 6 Pastebin"}, "Return to the start after visiting paste $counter.");
+        diag($mech->uri);
         $counter++;
     }
 };
