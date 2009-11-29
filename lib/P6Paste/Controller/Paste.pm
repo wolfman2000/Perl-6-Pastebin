@@ -4,7 +4,6 @@ use utf8;
 use strict;
 use warnings;
 use parent 'Catalyst::Controller';
-use Digest::SHA qw(sha256_hex);
 use DateTime;
 
 =head1 NAME
@@ -72,10 +71,7 @@ sub submit :Local :Args(0) {
     }
     elsif (defined $pass and length $pass) # If username and password provided
     {
-        # Remember the password procedure: PW + p6 at the end, hashed.
-        my %srch = (uname => $user, pword => sha256_hex($pass . "p6"));
-        my %attr = ('select' => ['id'], );
-        my $val = $c->model('DBIC::Users')->search(\%srch , \%attr );
+        my $val = $c->model('DBIC::Users')->get_id_row($user, $pass);
         if ($val->count) # If a match:
         {
             $id = $val->first->id;
@@ -89,13 +85,11 @@ sub submit :Local :Args(0) {
     }
     else # Username, not password, provided
     {
-        my %srch = (uname => $user, pword => undef );
-        my %attr = ('select' => ['id'], );
-        my $val = $c->model('DBIC::Users')->search(\%srch , \%attr )->single;
+        my $val = $c->model('DBIC::Users')->get_id_row($user);
         $mesN = 4;
         if (defined $val) # There is a non registered user with this name: use it.
         {
-            $id = $val->id;
+            $id = $val->single->id;
         }
         else # New person entirely: add as unregistered.
         {
