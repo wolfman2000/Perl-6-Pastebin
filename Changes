@@ -1,5 +1,8 @@
 This file documents the revision history for Perl extension P6Paste.
 
+0.07  2009-11-29 11:56:00 EST
+        - Separated some DB issues from tests.
+
 0.05  2009-11-29 02:48:30 EST
         - Lots of mini improvements. Branching to start soon.
 

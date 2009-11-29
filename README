@@ -1,4 +1,10 @@
 This Catalyst app is meant to host Perl 6 programs
 and give them syntax highlighting if it works.
 
+Present Bugs:
+
+    1) Testing the DB portions requirs SQLite right now.
+    2) PerlCritic and PerlTidy are evil, yet occasionally necessary.
+    3) Syntax::Highlight::Perl6 doesn't always works as it should.
+
 Run script/p6paste_server.pl to test the application.
