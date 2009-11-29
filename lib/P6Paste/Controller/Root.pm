@@ -67,8 +67,8 @@ The page called upon if nothing is found.
 sub default :Path {
     my ( $self, $c ) = @_;
     
-    my $arg = $c->request->arguments->[0];
-    if (defined $arg and $arg eq "pview")
+    my $arg = $c->request->arguments->[0]; # Always defined here.
+    if ($arg eq "pview")
     {
         $c->stash->{funny} = $c->model('DBIC::Messages')->get_rand_message(6);
         $c->stash->{template} = "pview_err.tt2";
