@@ -20,19 +20,17 @@ http://www.pjcj.net
 <h1>File Coverage</h1>
 <table>
 <tr><td class="h" align="right">File:</td><td align="left">blib/lib/P6Paste/Controller/Register.pm</td></tr>
-<tr><td class="h" align="right">Coverage:</td><td align="left" class="c0">36.3%</td></tr>
+<tr><td class="h" align="right">Coverage:</td><td align="left" class="c0">32.2%</td></tr>
 </table>
 <div><br/></div>
 <table>
 <tr><th>line</th><th>stmt</th><th>bran</th><th>cond</th><th>sub</th><th>pod</th><th>time</th><th>code</th></tr>
 <tr><td class="h">1</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">package P6Paste::Controller::Register;</td></tr>
-<tr><td class="h">2</td><td colspan="7"></td></tr><tr><td class="h">3</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-P6Paste-Controller-Register-pm--subroutine.html#L3">6</a></div></td><td></td><td><div>25</div><div>8</div><div>30</div></td><td class="s">use utf8;</td></tr>
-<tr><td class="h">4</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-P6Paste-Controller-Register-pm--subroutine.html#L4">6</a></div></td><td></td><td><div>28</div><div>10</div><div>28</div></td><td class="s">use strict;</td></tr>
-<tr><td class="h">5</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-P6Paste-Controller-Register-pm--subroutine.html#L5">6</a></div></td><td></td><td><div>28</div><div>11</div><div>22</div></td><td class="s">use warnings;</td></tr>
-<tr><td class="h">6</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-P6Paste-Controller-Register-pm--subroutine.html#L6">6</a></div></td><td></td><td><div>28</div><div>10</div><div>24</div></td><td class="s">use DateTime;</td></tr>
-<tr><td class="h">7</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-P6Paste-Controller-Register-pm--subroutine.html#L7">6</a></div></td><td></td><td><div>49</div><div>13</div><div>43</div></td><td class="s">use Digest::SHA qw(sha256_hex);</td></tr>
-<tr><td class="h">8</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-P6Paste-Controller-Register-pm--subroutine.html#L8">6</a></div></td><td></td><td><div>34</div><div>10</div><div>46</div></td><td class="s">use parent &#39;Catalyst::Controller&#39;;</td></tr>
-<tr><td class="h">9</td><td colspan="7"></td></tr><tr><td class="h">10 - 20</td><td colspan="6"></td><td class="s"><pre>=head1 NAME
+<tr><td class="h">2</td><td colspan="7"></td></tr><tr><td class="h">3</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-P6Paste-Controller-Register-pm--subroutine.html#L3">6</a></div></td><td></td><td><div>24</div><div>11</div><div>51</div></td><td class="s">use utf8;</td></tr>
+<tr><td class="h">4</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-P6Paste-Controller-Register-pm--subroutine.html#L4">6</a></div></td><td></td><td><div>32</div><div>9</div><div>30</div></td><td class="s">use strict;</td></tr>
+<tr><td class="h">5</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-P6Paste-Controller-Register-pm--subroutine.html#L5">6</a></div></td><td></td><td><div>28</div><div>9</div><div>27</div></td><td class="s">use warnings;</td></tr>
+<tr><td class="h">6</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-P6Paste-Controller-Register-pm--subroutine.html#L6">6</a></div></td><td></td><td><div>29</div><div>8</div><div>29</div></td><td class="s">use parent &#39;Catalyst::Controller&#39;;</td></tr>
+<tr><td class="h">7</td><td colspan="7"></td></tr><tr><td class="h">8 - 18</td><td colspan="6"></td><td class="s"><pre>=head1 NAME
 
 P6Paste::Controller::Register - Catalyst Controller
 
@@ -43,92 +41,79 @@ Catalyst Controller.
 =head1 METHODS
 
 =cut</pre></td></tr>
-<tr><td class="h">21</td><td colspan="7"></td></tr><tr><td class="h">22 - 26</td><td colspan="6"></td><td class="s"><pre>=head2 validate
+<tr><td class="h">19</td><td colspan="7"></td></tr><tr><td class="h">20 - 24</td><td colspan="6"></td><td class="s"><pre>=head2 validate
 
 Validate submitted data via normal form processing.
 
 =cut</pre></td></tr>
-<tr><td class="h">27</td><td colspan="7"></td></tr><tr><td class="h">28</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub validate :Local :Args(0) {</td></tr>
-<tr><td class="h">29</td><td><div class="c0">0</div></td><td></td><td></td><td><div class="c0"><a href="blib-lib-P6Paste-Controller-Register-pm--subroutine.html#L29">0</a></div></td><td><div class="c3">1</div></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my ($self, $c) = @_;</td></tr>
-<tr><td class="h">30</td><td colspan="7"></td></tr><tr><td class="h">31</td><td><div class="c0">0</div></td><td><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L31">0</a></div></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;unless (defined $c-&gt;request-&gt;params-&gt;{submit})</td></tr>
-<tr><td class="h">32</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
-<tr><td class="h">33</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$c-&gt;stash-&gt;{template} = &#39;val_get.tt2&#39;;</td></tr>
-<tr><td class="h">34</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;</td></tr>
-<tr><td class="h">35</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">36</td><td colspan="7"></td></tr><tr><td class="h">37</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $uname = $c-&gt;request-&gt;params-&gt;{regUser};</td></tr>
-<tr><td class="h">38</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $pass1 = $c-&gt;request-&gt;params-&gt;{regPass1};</td></tr>
-<tr><td class="h">39</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $pass2 = $c-&gt;request-&gt;params-&gt;{regPass2};</td></tr>
-<tr><td class="h">40</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $email = $c-&gt;request-&gt;params-&gt;{regEmail};</td></tr>
-<tr><td class="h">41</td><td colspan="7"></td></tr><tr><td class="h">42</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my @errors = ();</td></tr>
-<tr><td class="h">43</td><td colspan="7"></td></tr><tr><td class="h">44</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;# Validate username.</td></tr>
-<tr><td class="h">45</td><td colspan="7"></td></tr><tr><td class="h">46</td><td><div class="c0">0</div></td><td><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L46">0</a></div><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L46">0</a></div><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L46">0</a></div></td><td><div class="c0"><a href="blib-lib-P6Paste-Controller-Register-pm--condition.html#L46">0</a></div></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;unless (defined $uname and length $uname)</td></tr>
-<tr><td class="h">47</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
-<tr><td class="h">48</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @errors, &quot;You must provide a username to register.&quot;;</td></tr>
-<tr><td class="h">49</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">50</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;elsif ($uname !~ /^[0-9a-zA-Z_\|\`\-\^\{\}]{1,32}$/)</td></tr>
-<tr><td class="h">51</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
-<tr><td class="h">52</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @errors, &quot;Your username contains illegal characters.&quot;;</td></tr>
-<tr><td class="h">53</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">54</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;elsif ($c-&gt;model(&#39;DBIC::Users&#39;)-&gt;search({&#39;uname&#39; =&gt; $uname, &#39;pword&#39; =&gt; {&#39;!=&#39; =&gt; undef} })-&gt;count())</td></tr>
-<tr><td class="h">55</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
-<tr><td class="h">56</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @errors, &quot;The requested username is not available.&quot;;</td></tr>
-<tr><td class="h">57</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">58</td><td colspan="7"></td></tr><tr><td class="h">59</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;# Validate email.</td></tr>
-<tr><td class="h">60</td><td colspan="7"></td></tr><tr><td class="h">61</td><td><div class="c0">0</div></td><td><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L61">0</a></div><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L61">0</a></div><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L61">0</a></div></td><td><div class="c0"><a href="blib-lib-P6Paste-Controller-Register-pm--condition.html#L61">0</a></div></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;unless (defined $email and length $email)</td></tr>
-<tr><td class="h">62</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
-<tr><td class="h">63</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @errors, &quot;You must provide an email address.&quot;;</td></tr>
-<tr><td class="h">64</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">65</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;elsif ($email !~ /^([^.]+)(\.[^.]+)*@([^.]+\.)+([^.]+)$/)</td></tr>
-<tr><td class="h">66</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
-<tr><td class="h">67</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @errors, &quot;You must provide a valid email address.&quot;;</td></tr>
-<tr><td class="h">68</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">69</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;elsif ($c-&gt;model(&#39;DBIC::Users&#39;)-&gt;search({&#39;email&#39; =&gt; $email})-&gt;count())</td></tr>
-<tr><td class="h">70</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
-<tr><td class="h">71</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @errors, &quot;The requested email address is not available.&quot;;</td></tr>
-<tr><td class="h">72</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">73</td><td colspan="7"></td></tr><tr><td class="h">74</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;# Validate passwords.</td></tr>
-<tr><td class="h">75</td><td colspan="7"></td></tr><tr><td class="h">76</td><td><div class="c0">0</div></td><td><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L76">0</a></div><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L76">0</a></div><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L76">0</a></div></td><td><div class="c0"><a href="blib-lib-P6Paste-Controller-Register-pm--condition.html#L76">0</a></div></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;unless (defined $pass1 and length $pass1)</td></tr>
-<tr><td class="h">77</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
-<tr><td class="h">78</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @errors, &quot;You must provide a password to protect your account.&quot;;</td></tr>
-<tr><td class="h">79</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">80</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;elsif (length $pass1 &lt; 6)</td></tr>
-<tr><td class="h">81</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
-<tr><td class="h">82</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @errors, &quot;Your password must be at least 6 characters.&quot;;</td></tr>
-<tr><td class="h">83</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">84</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;elsif ($pass1 ne $pass2)</td></tr>
-<tr><td class="h">85</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
-<tr><td class="h">86</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @errors, &quot;Your password and confirmation password must match.&quot;;</td></tr>
-<tr><td class="h">87</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">88</td><td colspan="7"></td></tr><tr><td class="h">89</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;$c-&gt;stash-&gt;{regError} = \@errors;</td></tr>
-<tr><td class="h">90</td><td colspan="7"></td></tr><tr><td class="h">91</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $errs = scalar @errors;</td></tr>
-<tr><td class="h">92</td><td colspan="7"></td></tr><tr><td class="h">93</td><td><div class="c0">0</div></td><td><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L93">0</a></div></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;unless ($errs)</td></tr>
-<tr><td class="h">94</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
-<tr><td class="h">95</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# If taking over an unregistered name, change ownership.</td></tr>
-<tr><td class="h">96</td><td><div class="c0">0</div></td><td><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L96">0</a></div></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ($c-&gt;model(&#39;DBIC::Users&#39;)-&gt;search({&#39;uname&#39; =&gt; $uname, &#39;pword&#39; =&gt; undef})-&gt;count())</td></tr>
-<tr><td class="h">97</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
-<tr><td class="h">98</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#$c-&gt;model(&#39;DBIC::Pastes&#39;)-&gt;update({&#39;user_id&#39; =&gt; 2})-&gt;where({&#39;uname&#39; =&gt; $uname});</td></tr>
-<tr><td class="h">99</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$c-&gt;model(&#39;DBIC::Pastes&#39;)-&gt;search({&#39;uname&#39; =&gt; $uname}, { join =&gt; &#39;users&#39; })-&gt;update({ &#39;users&#39; =&gt; 2});</td></tr>
-<tr><td class="h">100</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">101</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Create a new record.</td></tr>
-<tr><td class="h">102</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$c-&gt;model(&#39;DBIC::Users&#39;)-&gt;create({</td></tr>
-<tr><td class="h">103</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uname =&gt; $uname,</td></tr>
-<tr><td class="h">104</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pword =&gt; sha256_hex($pass1 . &quot;p6&quot;),</td></tr>
-<tr><td class="h">105</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email =&gt; $email,</td></tr>
-<tr><td class="h">106</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;created =&gt; join(&quot; &quot;, split(/T/, DateTime-&gt;now)),</td></tr>
-<tr><td class="h">107</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</td></tr>
-<tr><td class="h">108</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
-<tr><td class="h">109</td><td><div class="c0">0</div></td><td><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L109">0</a></div></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;$c-&gt;stash-&gt;{funny} = $c-&gt;model(&#39;DBIC::Messages&#39;)-&gt;get_rand_message($errs ? 1 : 2);</td></tr>
-<tr><td class="h">110</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;$c-&gt;stash-&gt;{template} = &#39;validate.tt2&#39;;</td></tr>
-<tr><td class="h">111</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-P6Paste-Controller-Register-pm--subroutine.html#L111">6</a></div></td><td></td><td><div>38</div><div>10</div><div>39</div></td><td class="s">}</td></tr>
-<tr><td class="h">112</td><td colspan="7"></td></tr><tr><td class="h">113 - 115</td><td colspan="6"></td><td class="s"><pre>=head2 index
+<tr><td class="h">25</td><td colspan="7"></td></tr><tr><td class="h">26</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub validate :Local :Args(0) {</td></tr>
+<tr><td class="h">27</td><td><div class="c0">0</div></td><td></td><td></td><td><div class="c0"><a href="blib-lib-P6Paste-Controller-Register-pm--subroutine.html#L27">0</a></div></td><td><div class="c3">1</div></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my ($self, $c) = @_;</td></tr>
+<tr><td class="h">28</td><td colspan="7"></td></tr><tr><td class="h">29</td><td><div class="c0">0</div></td><td><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L29">0</a></div></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;unless (defined $c-&gt;request-&gt;params-&gt;{submit})</td></tr>
+<tr><td class="h">30</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
+<tr><td class="h">31</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$c-&gt;stash-&gt;{template} = &#39;val_get.tt2&#39;;</td></tr>
+<tr><td class="h">32</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;</td></tr>
+<tr><td class="h">33</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">34</td><td colspan="7"></td></tr><tr><td class="h">35</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $uname = $c-&gt;request-&gt;params-&gt;{regUser};</td></tr>
+<tr><td class="h">36</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $pass1 = $c-&gt;request-&gt;params-&gt;{regPass1};</td></tr>
+<tr><td class="h">37</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $pass2 = $c-&gt;request-&gt;params-&gt;{regPass2};</td></tr>
+<tr><td class="h">38</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $email = $c-&gt;request-&gt;params-&gt;{regEmail};</td></tr>
+<tr><td class="h">39</td><td colspan="7"></td></tr><tr><td class="h">40</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my @errors = ();</td></tr>
+<tr><td class="h">41</td><td colspan="7"></td></tr><tr><td class="h">42</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;# Validate username.</td></tr>
+<tr><td class="h">43</td><td colspan="7"></td></tr><tr><td class="h">44</td><td><div class="c0">0</div></td><td><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L44">0</a></div><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L44">0</a></div><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L44">0</a></div></td><td><div class="c0"><a href="blib-lib-P6Paste-Controller-Register-pm--condition.html#L44">0</a></div></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;unless (defined $uname and length $uname)</td></tr>
+<tr><td class="h">45</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
+<tr><td class="h">46</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @errors, &quot;You must provide a username to register.&quot;;</td></tr>
+<tr><td class="h">47</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">48</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;elsif ($uname !~ /^[0-9a-zA-Z_\|\`\-\^\{\}]{1,32}$/)</td></tr>
+<tr><td class="h">49</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
+<tr><td class="h">50</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @errors, &quot;Your username contains illegal characters.&quot;;</td></tr>
+<tr><td class="h">51</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">52</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;elsif ($c-&gt;model(&#39;DBIC::Users&#39;)-&gt;is_name_taken($uname))</td></tr>
+<tr><td class="h">53</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
+<tr><td class="h">54</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @errors, &quot;The requested username is not available.&quot;;</td></tr>
+<tr><td class="h">55</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">56</td><td colspan="7"></td></tr><tr><td class="h">57</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;# Validate email.</td></tr>
+<tr><td class="h">58</td><td colspan="7"></td></tr><tr><td class="h">59</td><td><div class="c0">0</div></td><td><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L59">0</a></div><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L59">0</a></div><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L59">0</a></div></td><td><div class="c0"><a href="blib-lib-P6Paste-Controller-Register-pm--condition.html#L59">0</a></div></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;unless (defined $email and length $email)</td></tr>
+<tr><td class="h">60</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
+<tr><td class="h">61</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @errors, &quot;You must provide an email address.&quot;;</td></tr>
+<tr><td class="h">62</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">63</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;elsif ($email !~ /^([^.]+)(\.[^.]+)*@([^.]+\.)+([^.]+)$/)</td></tr>
+<tr><td class="h">64</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
+<tr><td class="h">65</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @errors, &quot;You must provide a valid email address.&quot;;</td></tr>
+<tr><td class="h">66</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">67</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;elsif ($c-&gt;model(&#39;DBIC::Users&#39;)-&gt;is_email_taken($email))</td></tr>
+<tr><td class="h">68</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
+<tr><td class="h">69</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @errors, &quot;The requested email address is not available.&quot;;</td></tr>
+<tr><td class="h">70</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">71</td><td colspan="7"></td></tr><tr><td class="h">72</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;# Validate passwords.</td></tr>
+<tr><td class="h">73</td><td colspan="7"></td></tr><tr><td class="h">74</td><td><div class="c0">0</div></td><td><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L74">0</a></div><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L74">0</a></div><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L74">0</a></div></td><td><div class="c0"><a href="blib-lib-P6Paste-Controller-Register-pm--condition.html#L74">0</a></div></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;unless (defined $pass1 and length $pass1)</td></tr>
+<tr><td class="h">75</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
+<tr><td class="h">76</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @errors, &quot;You must provide a password to protect your account.&quot;;</td></tr>
+<tr><td class="h">77</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">78</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;elsif (length $pass1 &lt; 6)</td></tr>
+<tr><td class="h">79</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
+<tr><td class="h">80</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @errors, &quot;Your password must be at least 6 characters.&quot;;</td></tr>
+<tr><td class="h">81</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">82</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;elsif ($pass1 ne $pass2)</td></tr>
+<tr><td class="h">83</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
+<tr><td class="h">84</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;push @errors, &quot;Your password and confirmation password must match.&quot;;</td></tr>
+<tr><td class="h">85</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">86</td><td colspan="7"></td></tr><tr><td class="h">87</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;$c-&gt;stash-&gt;{regError} = \@errors;</td></tr>
+<tr><td class="h">88</td><td colspan="7"></td></tr><tr><td class="h">89</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my $errs = scalar @errors;</td></tr>
+<tr><td class="h">90</td><td colspan="7"></td></tr><tr><td class="h">91</td><td><div class="c0">0</div></td><td><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L91">0</a></div></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;unless ($errs)</td></tr>
+<tr><td class="h">92</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
+<tr><td class="h">93</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$c-&gt;model(&#39;DBIC::Users&#39;)-&gt;add_registered($uname, $pass1, $email);</td></tr>
+<tr><td class="h">94</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td class="h">95</td><td><div class="c0">0</div></td><td><div class="c0" title="-/-"><a href="blib-lib-P6Paste-Controller-Register-pm--branch.html#L95">0</a></div></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;$c-&gt;stash-&gt;{funny} = $c-&gt;model(&#39;DBIC::Messages&#39;)-&gt;get_rand_message($errs ? 1 : 2);</td></tr>
+<tr><td class="h">96</td><td><div class="c0">0</div></td><td></td><td></td><td></td><td></td><td><div>0</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;$c-&gt;stash-&gt;{template} = &#39;validate.tt2&#39;;</td></tr>
+<tr><td class="h">97</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-P6Paste-Controller-Register-pm--subroutine.html#L97">6</a></div></td><td></td><td><div>34</div><div>10</div><div>29</div></td><td class="s">}</td></tr>
+<tr><td class="h">98</td><td colspan="7"></td></tr><tr><td class="h">99 - 101</td><td colspan="6"></td><td class="s"><pre>=head2 index
 
 =cut</pre></td></tr>
-<tr><td class="h">116</td><td colspan="7"></td></tr><tr><td class="h">117</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub index :Path :Args(0) {</td></tr>
-<tr><td class="h">118</td><td><div class="c3">1</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-P6Paste-Controller-Register-pm--subroutine.html#L118">1</a></div></td><td><div class="c3">1</div></td><td><div>121</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my ($self, $c) = @_;</td></tr>
-<tr><td class="h">119</td><td><div class="c3">1</div></td><td></td><td></td><td></td><td></td><td><div>4</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;$c-&gt;stash-&gt;{template} = &#39;register.tt2&#39;;</td></tr>
-<tr><td class="h">120</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">#    register(@_);</td></tr>
-<tr><td class="h">121</td><td colspan="7"></td></tr><tr><td class="h">122</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-P6Paste-Controller-Register-pm--subroutine.html#L122">6</a></div></td><td></td><td><div>34</div><div>9</div><div>28</div></td><td class="s">}</td></tr>
-<tr><td class="h">123</td><td colspan="7"></td></tr><tr><td class="h">124</td><td colspan="7"></td></tr><tr><td class="h">125 - 134</td><td colspan="6"></td><td class="s"><pre>=head1 AUTHOR
+<tr><td class="h">102</td><td colspan="7"></td></tr><tr><td class="h">103</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">sub index :Path :Args(0) {</td></tr>
+<tr><td class="h">104</td><td><div class="c3">1</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-P6Paste-Controller-Register-pm--subroutine.html#L104">1</a></div></td><td><div class="c3">1</div></td><td><div>127</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;my ($self, $c) = @_;</td></tr>
+<tr><td class="h">105</td><td><div class="c3">1</div></td><td></td><td></td><td></td><td></td><td><div>6</div></td><td class="s">&nbsp;&nbsp;&nbsp;&nbsp;$c-&gt;stash-&gt;{template} = &#39;register.tt2&#39;;    </td></tr>
+<tr><td class="h">106</td><td><div class="c3">6</div><div class="c3">6</div><div class="c3">6</div></td><td></td><td></td><td><div class="c3"><a href="blib-lib-P6Paste-Controller-Register-pm--subroutine.html#L106">6</a></div></td><td></td><td><div>37</div><div>11</div><div>28</div></td><td class="s">}</td></tr>
+<tr><td class="h">107</td><td colspan="7"></td></tr><tr><td class="h">108</td><td colspan="7"></td></tr><tr><td class="h">109 - 118</td><td colspan="6"></td><td class="s"><pre>=head1 AUTHOR
 
 Jason Felds,,,
 
@@ -138,7 +123,7 @@ This library is free software. You can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =cut</pre></td></tr>
-<tr><td class="h">135</td><td colspan="7"></td></tr><tr><td class="h">136</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">1;</td></tr>
+<tr><td class="h">119</td><td colspan="7"></td></tr><tr><td class="h">120</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">1;</td></tr>
 </table>
 </body>
 </html>
