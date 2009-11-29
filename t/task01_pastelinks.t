@@ -17,17 +17,21 @@ SKIP:
     
     my $schema = P6Paste::Schema->connect($ENV{MYAPP_DSN}); # Easy way to add pastes.
     
-    $schema->resultset('Pastes')->populate([ # Someone map the first 9 or something.
+    my @rows = (
         map
         {
             user_id => 1, subject => "Paste $_", content => 'use v6; say "Hello World!";',
             tcheck => DateTime->new( year => 2009, month => 11, day => 1 ), ip => '1.2.3.4',
-        }, 1 .. 9,
+        }, 1 .. 9
+    );
+    push @rows, 
         {
-            user_id => 1, content => 'use v6; say "Hello World!";',
-            tcheck => DateTime->new( year => 2009, month => 11, day => 1 ), ip => '1.2.3.4',
-        },
-    ]);
+        user_id => 1, content => 'use v6; say "Hello World!";',
+        tcheck => DateTime->new( year => 2009, month => 11, day => 1 ), ip => '1.2.3.4',
+        };
+
+    
+    $schema->resultset('Pastes')->populate(\@rows);
     
     my $mech = Test::WWW::Mechanize::Catalyst->new(catalyst_app => 'P6Paste');
     
