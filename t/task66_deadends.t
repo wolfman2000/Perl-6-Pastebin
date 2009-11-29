@@ -24,7 +24,7 @@ SKIP:
     
     # Attempt to visit a 404 page directly.
     
-    $mech->get_ok('/defnotarealpage', "Try to visit a 404 page and get the results.");
+    is($mech->get('/defnotarealpage')->code, 404, "Try to visit a fake page and get the results.");
 };
 
 done_testing;
