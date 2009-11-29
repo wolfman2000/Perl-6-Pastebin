@@ -116,9 +116,7 @@ sub validate :Local :Args(0) {
 
 sub index :Path :Args(0) {
     my ($self, $c) = @_;
-    $c->stash->{template} = 'register.tt2';
-#    register(@_);
-    
+    $c->stash->{template} = 'register.tt2';    
 }
 
 
