@@ -89,7 +89,11 @@ sub validate :Local :Args(0) {
 
     my $errs = scalar @errors;
     
-    unless ($errs)
+    if ($errs)
+    {
+        $c->response->status(409);
+    }
+    else
     {
         $c->model('DBIC::Users')->add_registered($uname, $pass1, $email);
     }
