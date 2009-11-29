@@ -85,11 +85,11 @@ sub submit :Local :Args(0) {
     }
     else # Username, not password, provided
     {
-        my $val = $c->model('DBIC::Users')->get_id_row($user);
+        my $val = $c->model('DBIC::Users')->get_id_row($user)->single;
         $mesN = 4;
         if (defined $val) # There is a non registered user with this name: use it.
         {
-            $id = $val->single->id;
+            $id = $val->id;
         }
         else # New person entirely: add as unregistered.
         {
