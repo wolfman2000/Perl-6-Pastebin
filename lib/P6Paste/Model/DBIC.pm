@@ -7,11 +7,9 @@ my $dsn = $ENV{MYAPP_DSN} // 'dbi:SQLite:p6paste.db';
 __PACKAGE__->config(
     schema_class => 'P6Paste::Schema',
     
-    connect_info => {
-        dsn => $dsn,
-        user => '',
-        password => '',
-    }
+    connect_info => [
+        $dsn,
+    ]
 );
 
 =head1 NAME
