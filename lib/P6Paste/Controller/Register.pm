@@ -51,7 +51,7 @@ sub validate :Local :Args(0) {
     {
         push @errors, "Your username contains illegal characters.";
     }
-    elsif ($c->model('DBIC::Users')->search({'uname' => $uname, 'pword' => {'!=' => undef} })->count())
+    elsif ($c->model('DBIC::Users')->is_name_taken($uname))
     {
         push @errors, "The requested username is not available.";
     }
