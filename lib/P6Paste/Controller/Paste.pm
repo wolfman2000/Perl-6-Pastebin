@@ -42,6 +42,7 @@ sub submit :Local :Args(0) {
     unless (defined $c->request->params->{submit})
     {
         $c->stash->{template} = 'val_get.tt2';
+        $c->response->status(403); # Must come in through post.
         return;
     }
     
