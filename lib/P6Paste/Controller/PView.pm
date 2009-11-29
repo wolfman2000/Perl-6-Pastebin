@@ -44,7 +44,7 @@ sub index :Chained('/') :PathPart('pview') :Args(1) {
     }
     else
     {
-
+        $c->stash->{subject} = $row->subject // "No subject given.";
         my $txt = $row->content;
         $txt =~ s/\\\"/\"/g;
         no warnings;
@@ -63,7 +63,6 @@ sub index :Chained('/') :PathPart('pview') :Args(1) {
             $c->stash->{pastview} = "<pre>$txt</pre>";
         }
     }
-    $c->stash->{subject} = $row->subject // "No subject given.";
     $c->stash->{template} = 'pasteview.tt2';
 }
 
