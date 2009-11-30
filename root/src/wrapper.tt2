@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8" />
         <title>[% title %]</title>
-        [% IF is_ie -%]
+        [% IF c.session.is_ie -%]
         <script type="text/javascript" src="[% c.uri_for('/static/js/IE8.js') %]"></script>
 	<script type="text/javascript" src="[% c.uri_for('/static/js/ie_html5.js') %]"></script>
         [% END -%]

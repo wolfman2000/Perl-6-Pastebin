@@ -35,7 +35,7 @@ sub auto :Private {
     my ($self, $c) = @_;
     
     # Get whether the browser is IE or not.
-    $c->stash->{is_ie} //= HTTP::BrowserDetect->new->ie;
+    $c->session->{is_ie} //= HTTP::BrowserDetect->new->ie;
 
     # Get the name of the person. If the name isn't gotten, set later.
     $c->stash->{uname} = $c->model('DBIC::Users')->get_name($c->session->{id});
