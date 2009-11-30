@@ -85,13 +85,13 @@ sub validate :Local :Args(0) {
         push @errors, "Your password and confirmation password must match.";
     }
     
-    $c->stash->{regError} = \@errors;
 
     my $errs = scalar @errors;
     
     if ($errs)
     {
         $c->response->status(409);
+        $c->stash->{regError} = \@errors;
     }
     else
     {
