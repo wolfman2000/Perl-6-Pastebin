@@ -40,7 +40,8 @@ sub add_registered() # Just return a true value.
     if (not $self->is_name_taken($name))
     {
         # Force other posts to orphaned: have a clean slate.
-        $self->update({user_id => 2})->where({uname => $name});
+        #$self->pastes->update({user_id => 2})->where({uname => $name});
+        $self->related_resultset('pastes')->search({uname => $name})->update({id => 2});
     }
     my $ins = {
         uname => $name,

@@ -3,6 +3,8 @@ package P6Paste::Controller::Register;
 use utf8;
 use strict;
 use warnings;
+use Regexp::Common qw<Email::Address>;
+use Email::Address;
 use parent 'Catalyst::Controller';
 
 =head1 NAME
@@ -61,7 +63,7 @@ sub validate :Local :Args(0) {
     {
         push @errors, "You must provide an email address.";
     }
-    elsif ($email !~ /^([^.]+)(\.[^.]+)*@([^.]+\.)+([^.]+)$/)
+    elsif ($email !~ /($RE{Email}{Address})/g)
     {
         push @errors, "You must provide a valid email address.";
     }
