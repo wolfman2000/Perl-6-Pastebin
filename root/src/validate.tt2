@@ -2,13 +2,13 @@
 [%- IF funny -%]
 <p>[%- funny -%]</p>
 [%- END -%]
-[%- IF regError AND regError.length -%]
+[%- IF numErrs -%]
 <h2>Error!</h2>
 <p>You were unable to register. Here is what happened that prevented registration:</p>
 <ul>
 [%- FOREACH Err = regError -%]
 <li>
-[%- GET Err -%]
+[%- Err -%]
 </li>
 [%- END -%]
 </ul>
