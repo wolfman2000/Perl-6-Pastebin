@@ -111,7 +111,7 @@ SKIP:
             regUser => 'PerlUser',
             regPass1 => 'thisworks',
             regPass2 => 'thisworks',
-            regEmail => 'in#valid@em&ail@add.ress.@here.com',
+            regEmail => 'invalid.email.address',
         },
         form_id => 'regForm',
         button => 'submit'
