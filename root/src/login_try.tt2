@@ -1,0 +1,14 @@
+<section id="funny">
+[%- IF funny -%]
+<p>[%- funny -%]</p>
+[%- END -%]
+[%- IF errors -%]
+<h2>Error!</h2>
+<p>You were unable to login. Did you make sure to spell
+your username and password correctly? Is caps lock off?</p>
+<p>Please hit the back button on your browser and try again.</p>
+[%- ELSE -%]
+<h2>Success</h2>
+<p>You are now logged in. <a href="/">Get to pasting</a>!</p>
+[%- END -%]
+</section>

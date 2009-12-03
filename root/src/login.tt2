@@ -1,0 +1,16 @@
+<p>Login using the form below. This way, you will not
+have to type in your username and password for every paste.</p>
+
+<form id="loginForm" method="post" action="[% c.uri_for('/login/submit') %]">
+<fieldset>
+<legend>Fill in all fields.</legend>
+<dl>
+<dt class="required"><label for="pNick">Nickname</label></dt>
+<dd><input name="pNick" id="pNick" type="text" size="20" maxlength="32" /></dd>
+<dt class="required"><label for="pPass">Password</label></dt>
+<dd><input name="pPass" id="pPass" type="password" size="20" maxlength="32" /></dd>
+</dl>
+<p><button name="submit" id="submit" value="submit" type="submit">Submit</button></p>
+</fieldset>
+</form>
+
