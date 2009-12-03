@@ -23,8 +23,23 @@ Catalyst Controller.
 
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
+    
+    if (defined $c->session->{id})
+    {
+        $c->response->status(409);
+        $c->stash->{template} = 'login_nope.tt2';
+        return;
+    }
+    
+    $c->stash->{template} = 'login.tt2';
+}
 
-    $c->response->body('Matched P6Paste::Controller::Login in Login.');
+sub submit :Local :Args(0) {
+    my ( $self, $c ) = @_;
+    
+    
+    
+    $c->stash->{template} = 'login_try.tt2';
 }
 
 

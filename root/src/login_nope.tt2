@@ -1,0 +1,8 @@
+<section id="funny">
+[%- IF funny -%]
+<p>[%- funny -%]</p>
+[%- END -%]
+<h2>Error!</h2>
+<p>You are already logged in [% uname %]! You can't log in again!</p>
+<p>Please hit the back button on your browser and try again.</p>
+</section>
