@@ -24,6 +24,12 @@ Catalyst Controller.
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
+    unless (defined $c->session->{id})
+    {
+        $c->stash->{template} = 'logout_nope.tt2';
+        $c->response->status(409);
+    }
+
     $c->response->body('Matched P6Paste::Controller::Logout in Logout.');
 }
 
